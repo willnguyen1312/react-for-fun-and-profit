@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./Home";
 import { Effect } from "./Effect";
 import { Fast } from "./Fast";
+import { RenderProp } from "./RenderProp";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     element: <Home />,
     children: [
       { path: "effect", element: <Effect /> },
+      { path: "render-prop", element: <RenderProp /> },
       { path: "fast", element: <Fast /> },
     ],
   },
