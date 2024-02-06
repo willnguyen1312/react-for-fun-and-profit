@@ -2,9 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "./Home";
+import { CompoundComponent } from "./CompoundComponent";
 import { Effect } from "./Effect";
 import { Fast } from "./Fast";
+import { Home } from "./Home";
 import { RenderProp } from "./RenderProp";
 
 const router = createBrowserRouter([
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
     children: [
       { path: "effect", element: <Effect /> },
       { path: "render-prop", element: <RenderProp /> },
+      { path: "compound-component", element: <CompoundComponent /> },
       { path: "fast", element: <Fast /> },
     ],
   },
@@ -30,5 +32,5 @@ if (import.meta.hot) {
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

@@ -4,6 +4,7 @@ const links: { to: string; label: string }[] = [
   { to: "/effect", label: "You might not need an effect" },
   { to: "/fast", label: "Fast code" },
   { to: "/render-prop", label: "Render prop" },
+  { to: "/compound-component", label: "Compound component" },
 ];
 
 export function Home() {

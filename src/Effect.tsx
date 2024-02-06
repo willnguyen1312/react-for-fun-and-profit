@@ -9,7 +9,7 @@ export function Effect() {
     function updateFullNameOnNamesChange() {
       setFullName(firstName + " " + lastName);
     },
-    [firstName, lastName]
+    [firstName, lastName],
   );
 
   return (
