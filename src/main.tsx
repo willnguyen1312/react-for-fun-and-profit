@@ -7,6 +7,7 @@ import { CompoundComponent } from "./CompoundComponent";
 import { Effect } from "./Effect";
 import { Fast } from "./Fast";
 import { Home } from "./Home";
+import { Playground } from "./Playground";
 import { RenderProp } from "./RenderProp";
 
 const router = createBrowserRouter([
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: "render-prop", element: <RenderProp /> },
       { path: "compound-component", element: <CompoundComponent /> },
       { path: "fast", element: <Fast /> },
+      { path: "playground", element: <Playground /> },
     ],
   },
 ]);
@@ -33,5 +35,5 @@ if (import.meta.hot) {
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

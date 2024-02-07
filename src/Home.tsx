@@ -5,6 +5,7 @@ const links: { to: string; label: string }[] = [
   { to: "/fast", label: "Fast code" },
   { to: "/render-prop", label: "Render prop" },
   { to: "/compound-component", label: "Compound component" },
+  { to: "/playground", label: "Playground" },
 ];
 
 export function Home() {
