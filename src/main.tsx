@@ -9,6 +9,7 @@ import { Fast } from "./Fast";
 import { Home } from "./Home";
 import { Playground } from "./Playground";
 import { RenderProp } from "./RenderProp";
+import { Api } from "./Api";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "compound-component", element: <CompoundComponent /> },
       { path: "fast", element: <Fast /> },
       { path: "playground", element: <Playground /> },
+      { path: "api", element: <Api /> },
     ],
   },
 ]);
@@ -32,8 +34,22 @@ if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());
 }
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+async function enableMocking() {
+  if (process.env.NODE_ENV !== "development") {
+    return;
+  }
+
+  const { worker } = await import("./mocks/browser");
+
+  // `worker.start()` returns a Promise that resolves
+  // once the Service Worker is up and ready to intercept requests.
+  return worker.start();
+}
+
+enableMocking().then(() => {
+  ReactDOM.createRoot(document.getElementById("root")!).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+});
