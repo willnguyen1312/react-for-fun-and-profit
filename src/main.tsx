@@ -1,7 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "virtual:uno.css";
-
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+} from "@apollo/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CompoundComponent } from "./CompoundComponent";
 import { Effect } from "./Effect";
@@ -26,9 +31,10 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default function App() {
-  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
-}
+const client = new ApolloClient({
+  link: new HttpLink(),
+  cache: new InMemoryCache(),
+});
 
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());
@@ -49,7 +55,9 @@ async function enableMocking() {
 enableMocking().then(() => {
   ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-      <App />
+      <ApolloProvider client={client}>
+        <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+      </ApolloProvider>
     </React.StrictMode>
   );
 });

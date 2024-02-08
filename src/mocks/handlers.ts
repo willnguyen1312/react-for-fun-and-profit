@@ -19,7 +19,9 @@ const allPosts = new Map([
 ]);
 
 export const handlers = [
-  graphql.query("ListPosts", () => {
+  graphql.query("ListPosts", async () => {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
     return HttpResponse.json({
       data: {
         // Convert all posts to an array
@@ -27,5 +29,12 @@ export const handlers = [
         posts: Array.from(allPosts.values()),
       },
     });
+    // Return a error to test the error state
+    // return HttpResponse.json({
+    //   errors: [
+    //     { message: "Internal Server Error" },
+    //     { message: "Another error" },
+    //   ],
+    // });
   }),
 ];
