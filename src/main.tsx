@@ -1,20 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "virtual:uno.css";
 import {
   ApolloClient,
-  InMemoryCache,
   ApolloProvider,
   HttpLink,
+  InMemoryCache,
 } from "@apollo/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "virtual:uno.css";
+import { Api } from "./Api";
+import { Closure } from "./Closure";
 import { CompoundComponent } from "./CompoundComponent";
 import { Effect } from "./Effect";
 import { Fast } from "./Fast";
 import { Home } from "./Home";
 import { Playground } from "./Playground";
 import { RenderProp } from "./RenderProp";
-import { Api } from "./Api";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       { path: "fast", element: <Fast /> },
       { path: "playground", element: <Playground /> },
       { path: "api", element: <Api /> },
+      { path: "closure", element: <Closure /> },
     ],
   },
 ]);
