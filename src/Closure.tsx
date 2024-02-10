@@ -5,7 +5,7 @@ function updateValue(
   currentValue: number,
   dispatch: React.DispatchWithoutAction
 ) {
-  if (currentValue >= 5) {
+  if (currentValue >= 3) {
     return;
   }
 
@@ -18,7 +18,7 @@ export function Closure() {
   latestValue.current = value;
 
   function increment() {
-    if (value >= 5) {
+    if (value >= 3) {
       return;
     }
 
@@ -34,7 +34,7 @@ export function Closure() {
       <h2>Closure</h2>
       <p>
         <button onClick={increment}>Increment</button>
-        <span> {value} </span>
+        <span role="presentation">{value}</span>
       </p>
     </section>
   );
