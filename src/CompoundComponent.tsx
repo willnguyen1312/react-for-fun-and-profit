@@ -65,7 +65,11 @@ function AlertContent({
   className?: string;
 }) {
   const { show } = useAlertContext();
-  return show ? <div className={className}>{children}</div> : null;
+  return show ? (
+    <div role="alert" className={className}>
+      {children}
+    </div>
+  ) : null;
 }
 
 function After() {
@@ -111,7 +115,7 @@ function AlertBefore({
   );
 }
 
-function Before() {
+export function Before() {
   return (
     <AlertBefore
       alertContent="Alert❗"
@@ -128,7 +132,7 @@ export function CompoundComponent() {
     <>
       <section>Compound Component</section>
 
-      <Before />
+      {/* <Before /> */}
 
       <After />
     </>
