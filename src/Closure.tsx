@@ -3,7 +3,7 @@ import { flushSync } from "react-dom";
 
 function updateValue(
   currentValue: number,
-  dispatch: React.DispatchWithoutAction
+  dispatch: React.DispatchWithoutAction,
 ) {
   if (currentValue >= 3) {
     return;

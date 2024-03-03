@@ -60,6 +60,6 @@ enableMocking().then(() => {
       <ApolloProvider client={client}>
         <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
       </ApolloProvider>
-    </React.StrictMode>
+    </React.StrictMode>,
   );
 });

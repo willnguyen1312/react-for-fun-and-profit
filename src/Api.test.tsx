@@ -21,7 +21,7 @@ function renderApi() {
   return render(
     <ApolloProvider client={client}>
       <Api />
-    </ApolloProvider>
+    </ApolloProvider>,
   );
 }
 
