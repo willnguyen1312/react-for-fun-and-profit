@@ -16,6 +16,7 @@ import { Fast } from "./Fast";
 import { Home } from "./Home";
 import { Playground } from "./Playground";
 import { RenderProp } from "./RenderProp";
+import { Debounce } from "./Debounce";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: "playground", element: <Playground /> },
       { path: "api", element: <Api /> },
       { path: "closure", element: <Closure /> },
+      { path: "debounce", element: <Debounce /> },
     ],
   },
 ]);

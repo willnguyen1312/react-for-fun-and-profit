@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 const links: { to: string; label: string }[] = [
   { to: "/api", label: "Api component" },
   { to: "/compound-component", label: "Compound component" },
+  { to: "/debounce", label: "Debounce" },
   { to: "/effect", label: "You might not need an effect" },
   { to: "/fast", label: "Fast code" },
   { to: "/playground", label: "Playground" },
