@@ -17,7 +17,7 @@ export function Debounce() {
           timeout = null;
         }, delay);
       };
-    })()
+    })(),
   );
 
   const increment = () => {
