@@ -17,14 +17,14 @@ export function Debounce() {
           timeout = null;
         }, delay);
       };
-    })(),
+    })()
   );
 
   const increment = () => {
     debounceFuncRef.current(() => {
       console.log("increment");
       setValue(value + 1);
-    }, 3000);
+    }, 1000);
   };
 
   return (
