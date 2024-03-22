@@ -18,6 +18,7 @@ import { Playground } from "./Playground";
 import { RenderProp } from "./RenderProp";
 import { Debounce } from "./Debounce";
 import { ConcurrentReact } from "./ConcurrentReact";
+import { Composition } from "./Composition";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
     element: <Home />,
     children: [
       { path: "effect", element: <Effect /> },
+      { path: "composition", element: <Composition /> },
       { path: "render-prop", element: <RenderProp /> },
       { path: "compound-component", element: <CompoundComponent /> },
       { path: "fast", element: <Fast /> },
@@ -64,6 +66,6 @@ enableMocking().then(() => {
       <ApolloProvider client={client}>
         <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
       </ApolloProvider>
-    </React.StrictMode>,
+    </React.StrictMode>
   );
 });
